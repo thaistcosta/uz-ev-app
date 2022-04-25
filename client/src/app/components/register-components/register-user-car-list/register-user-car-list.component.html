@@ -1,0 +1,23 @@
+<div class="custom-select">
+    <h2>Model</h2>
+    <form [formGroup]="makeForm">
+        <select formControlName="make" (click)='onSelectMake(make)'>
+            <optgroup style="max-height: 65px;">
+                <option [ngValue]="null">Select Make...</option>
+                <option *ngFor="let make of makeList" [ngValue]="make">{{make}}</option>
+            </optgroup>
+        </select>
+    </form>
+</div>
+<div *ngIf="filterCarList.length">
+    <!-- <form [formGroup]="versionForm">
+        <select formControlName="version" onChange='onSelectVersion(version)'>
+            <option [ngValue]="null">Select Version...</option>
+            <option *ngFor="let version of versionList" [ngValue]="version">{{version}}</option>
+        </select>
+    </form> -->
+    <div class="car-list">
+        <app-register-user-car-details *ngFor="let car of filterCarList" [car]="car" (selectedCar)="selectedCar($event)" ></app-register-user-car-details>
+    </div>
+    <a (click)="onSubmit()"><img src="../../../../assets/arrow.png"></a>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="car-detail">
+        <a (click)="select(car)">
+            <h3>Model: {{car.naming.model}}</h3>
+            <p>Version: {{car.naming.chargetrip_version}}</p>
+            <img src={{car.media.image.thumbnail_url}}/>
+            <br>
+            <p>Battery
+                <br>
+                Usable kwh: {{car.battery.usable_kwh}}
+                <br>
+                Full kwh: {{car.battery.full_kwh}}</p>
+        </a>
+    </div>
+</div>    

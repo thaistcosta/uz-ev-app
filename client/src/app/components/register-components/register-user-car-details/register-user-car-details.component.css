@@ -1,0 +1,11 @@
+.car-detail {
+    margin: 20px;
+    padding: 15px;
+    box-shadow: 2px 2px 8px 0 #636a6b80;
+    border-radius: 20px;
+}
+
+a:visited {
+    background: rgb(171, 156, 156);
+    color: #ff0000;
+}

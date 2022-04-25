@@ -1,0 +1,33 @@
+  form select {
+    position: relative;
+    font-family: Arial;
+    height: 30px;
+    width: 200px;
+    max-height: 200px;
+    overflow-y: scroll;
+    border-radius: 20px;
+  }
+
+  .car-list {
+    overflow-x: scroll;
+    flex-direction: row;
+    display: flex;
+  }
+
+  form {
+    max-height: 150px;
+  }
+  .custom-select {
+    /* position: absolute; */
+    margin: 20px 20px;
+    top: 20px;
+    max-height: 150px;
+  }
+  
+  img {
+    display: block;
+    width: 30px;
+    right: 10vw;
+    float: right;
+    margin: 20px;
+  }

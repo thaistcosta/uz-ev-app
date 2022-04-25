@@ -1,0 +1,82 @@
+<!-- <div class="container" cdkOverlayOrigin style="top: 150px;" #trigger="cdkOverlayOrigin">
+    <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
+        <div class="route-detail">
+        <mat-stepper orientation="vertical" class="route-detail">
+                <ng-template matStepContent>
+                    <button (click)="isOpen = !isOpen" mat-button cdkOverlayOrigin #trigger="cdkOverlayOrigin">Test</button>
+                </ng-template>
+            <mat-step state="car">
+              <ng-template matStepLabel>Overview</ng-template>
+              <ng-template matStepContent>
+                <p>This content was rendered lazily</p>
+              </ng-template>
+            </mat-step>
+            <mat-step state="car">
+              <ng-template matStepLabel>Origin</ng-template>
+              <ng-template matStepContent>
+                <p>This content was also rendered lazily</p>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </ng-template>
+            </mat-step>
+            <mat-step state="car">
+              <ng-template matStepLabel >Step 3</ng-template>
+              <p>This content was rendered eagerly</p>
+              <button mat-button matStepperPrevious>Back</button>
+            </mat-step>
+            <mat-step state="car">
+              <ng-template matStepLabel >Step 3</ng-template>
+              <p>This content was rendered eagerly</p>
+              <button mat-button matStepperPrevious>Back</button>
+            </mat-step>
+            <mat-step state="car">
+              <ng-template matStepLabel>Destination</ng-template>
+              <p>This content was rendered eagerly</p>
+              <button mat-button matStepperPrevious>Back</button>
+            </mat-step>
+  
+            <ng-template matStepperIcon="edit">
+                <mat-icon>offline_bolt</mat-icon>
+            </ng-template>
+          </mat-stepper> 
+        </div> 
+    </ng-template>
+</div> -->
+<div class="exp">
+    <mat-expansion-panel hideToggle>     
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+           Route details
+          </mat-panel-title>
+          <mat-panel-description>
+            {{trip.totalDuration}} -
+            {{trip.totalDistance}} km <br>
+            {{trip.stops}} stops
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngFor="let leg of trip.legs" class="stops">
+            <p>{{leg.chargeTime}}</p>
+        </div>
+  
+    </mat-expansion-panel>
+
+</div>
+<!-- 
+<button type="button" mat-button (click)="drawer.toggle()">
+    Route Details
+</button>
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+      <button (click)="showFiller = !showFiller" mat-raised-button>
+        Toggle extra text
+      </button>
+    </mat-drawer>
+  
+    
+    <div class="example-sidenav-content">
+        <button type="button" mat-button (click)="drawer.toggle()">
+            Route Details
+        </button>
+    </div>
+</mat-drawer-container> -->

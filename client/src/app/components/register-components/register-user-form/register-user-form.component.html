@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Create your account</h1>
+    <form [formGroup]="registerForm">
+        <input placeholder="First Name" formControlName="firstName">
+        <input placeholder="Last Name" formControlName="lastName">
+        <input placeholder="E-mail" formControlName="email">
+        <input placeholder="Password" formControlName="password">
+    </form>
+    <a (click)="onSubmit()"><img src="../../../../assets/arrow.png"></a>
+</div>
+
+
+<!-- <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Legacy form field</mat-label>
+      <input matInput placeholder="Placeholder">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Standard form field</mat-label>
+      <input matInput placeholder="Placeholder">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Fill form field</mat-label>
+      <input matInput placeholder="Placeholder">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Outline form field</mat-label>
+      <input matInput placeholder="Placeholder">
+    </mat-form-field>
+  </p> -->

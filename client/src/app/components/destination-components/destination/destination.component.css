@@ -1,0 +1,21 @@
+button {
+    position: absolute;
+    right: 10px;
+    top: 75px;
+    height: 30px;
+    width: 100px;
+    background-color: rgb(66, 148, 235);
+    color: white;
+    font-weight: 600;
+    border: none;
+    box-shadow: 8px 28px 24px 0 #3b494b80;  
+}
+
+.navigate {
+    position: absolute;
+    right: 10px;
+}
+
+body {
+    margin: 0;
+}

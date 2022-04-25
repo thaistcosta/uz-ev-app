@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>Sign In</h1>
+    <form [formGroup]="loginForm" class="login-form">
+        <input placeholder="Enter your e-mail">
+        <input placeholder="Enter your password">
+    </form>
+    <h3>Don't have an account ? <a routerLink="/register">Sign Up</a></h3>
+    <button (click)="onSubmit()">Log in</button>
+</div>

@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-form {
+    display: flex; 
+    flex-direction: column;
+    max-width: 60vw;
+    justify-content: center;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid;
+    width: 80vw;
+}
+
+button {
+    margin: 10px;
+    background-color: #008CBA;
+    border-radius: 5px;
+    height: 30px;
+    width: 88vw;
+    border: none;
+    color: white;
+}
+
+h1 {
+    margin: 10px;
+    color: #045773;
+    align-self: center;
+}
+
+h3 {
+    align-self: center;
+    font-size: 12px;
+    margin: 10px;
+}
+
+a {
+    color: blue;
+    font-size: 15px;
+    margin: 2px;;
+}

@@ -1,0 +1,31 @@
+@import '@angular/cdk/overlay-prebuilt.css';
+
+#map-mapbox {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+img.low {
+    top: 70vh;
+    bottom: 50px;
+    right: 20px;
+    position: absolute;
+    max-width: 60px;
+}
+
+img.search {
+    top: 10px;
+    margin: 20px;
+    position: absolute;
+    width: 40px;
+}
+
+img.google {
+    top: 60vh;
+    bottom: 50px;
+    right: 30px;
+    position: absolute;
+    max-width: 50px;
+}
+
