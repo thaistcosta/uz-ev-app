@@ -1,10 +1,12 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+// require('dotenv').config();
 
 export const environment = {
   production: false,
-  mapboxKey: 'pk.eyJ1IjoidGhhaXN0Y29zdGEiLCJhIjoiY2wyMHR4bGE2MGRoejNpbW05ZDN3OWdiOCJ9.y5BArbldoPq8boCYJtUAJg',
+  mapboxKey: 'pk.eyJ1IjoidGhhaXN0Y29zdGEiLCJhIjoiY2wyMHR4bGE2MGRoejNpbW05ZDN3OWdiOCJ9.y5BArbldoPq8boCYJtUAJg'
+  // mapboxKey: process.env.API_MAPBOX_KEY,
 };
 
 /*

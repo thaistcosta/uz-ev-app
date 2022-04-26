@@ -44,22 +44,19 @@
 </div> -->
 <div class="exp">
     <mat-expansion-panel hideToggle>     
-        <mat-expansion-panel-header>
+        <mat-expansion-panel-header> -->
           <mat-panel-title>
            Route details
           </mat-panel-title>
           <mat-panel-description>
             {{trip.totalDuration}} -
-            {{trip.totalDistance}} km <br>
-            {{trip.stops}} stops
+            {{trip.totalDistance}} km {{trip.stops}} stops
           </mat-panel-description>
         </mat-expansion-panel-header>
         <div *ngFor="let leg of trip.legs" class="stops">
             <p>{{leg.chargeTime}}</p>
         </div>
-  
     </mat-expansion-panel>
-
 </div>
 <!-- 
 <button type="button" mat-button (click)="drawer.toggle()">
