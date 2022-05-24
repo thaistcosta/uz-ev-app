@@ -1,1 +1,1 @@
-# uz-ev-app
+# uz-ev
