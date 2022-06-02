@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Select your car...</h2>
+    <div class="custom-select" >
+        <mat-form-field [formGroup]="makeForm" appearance="fill">
+            <mat-label>Model</mat-label>
+            <mat-select formControlName="make" (click)='onSelectMake(make)'>
+              <mat-option *ngFor="let make of makeList" [value]="make">
+                {{make}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    <div *ngIf="filterCarList.length">
+        <div class="car-list">
+            <app-register-user-car-details *ngFor="let car of filterCarList" [car]="car" (selectedCar)="selectedCar($event)" ></app-register-user-car-details>
+        </div>
+        <a (click)="onSubmit()"><img src="../../../../assets/arrow.png"></a>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div id="map-mapbox"></div>
+<a routerLink="/discover"><img class="search" src="../../../../assets/search.png"></a>
+<div *ngIf="route">
+</div>
+<app-route-details></app-route-details>
+<img class="profile" src="../../../../assets/profile.png" routerLink="/profile">
+<img class="low" src="../../../../assets/low.png" (click)="panic()">
+<img class="google" src="../../../../assets/goog.png" (click)="navigate(route)">
