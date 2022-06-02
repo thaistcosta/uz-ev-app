@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Trip } from 'src/app/interfaces/trip.interface';
+import { MatDialog } from '@angular/material/dialog';
 import { StoreService } from 'src/app/service/store.service'; 
+import { DestinationComponent } from '../destination/destination.component';
 
 @Component({
   selector: 'app-route-details',
@@ -9,48 +10,21 @@ import { StoreService } from 'src/app/service/store.service';
 })
 export class RouteDetailsComponent implements OnInit {
 
-  trip!: Trip;
-  isOpen: boolean = true;
-  data!: any;
-  showFiller = false;
-  // @Output() data: EventEmitter<any> = new EventEmitter;
-
-  constructor(private store: StoreService) { }
+  constructor(private store: StoreService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.data = this.store.getRouteData()
-    this.dataParser(this.data);
+    this.openDialog();
   }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(DestinationComponent, {
+      height: '580px',
+      width: '360px',
+    });
 
-  dataParser(route: any): void {
-
-    route.legs.forEach((el: any) => {
-      el.duration = this.secondsConverter(el.duration)
-      el.chargeTime = this.secondsConverter(el.chargeTime)
-    })
-
-    const obj = {
-      routeId: route.id,
-      routeType: route.type,
-      stops: route.charges,
-      totalDistance: Math.round((route.distance / 1000) * 100) / 100,
-      totalDuration: this.secondsConverter(route.duration),
-      chargeTime: this.secondsConverter(route.chargeTime),
-      rangeStartPercentage: route.rangeStartPercentage,
-      rangeEndPercentage: route.rangeEndPercentage,
-      legs: route.legs,
-    }
-    this.trip = obj;
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
-
-  secondsConverter(seconds: number): string {
-    let hours   = Math.floor(seconds / 3600); 
-    let minutes = Math.floor((seconds - (hours * 3600)) / 60);
-
-    if (!hours) return `${minutes} min`;
-
-    return `${hours} hr ${minutes} min`;
-  }
-
 
 }

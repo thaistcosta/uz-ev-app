@@ -27,8 +27,8 @@ export class RegisterUserCarListComponent implements OnInit {
     private store: StoreService, private _router: Router) { }
 
   ngOnInit(): void {
-    // this.getCarList();
-    this.mockdata()
+    this.getCarList();
+    // this.mockdata()
     this.makeFormBuilder();
 
   }
@@ -96,7 +96,8 @@ export class RegisterUserCarListComponent implements OnInit {
   selectedCar(car: any) {
     let prev = this.store.getUserData()
     prev.carId = car.id;
-    prev.carUsableKw = car.battery.usable_kwh;
+    prev.carUrl = car.media.image.thumbnail_url;
+    prev.carUsableKwh = car.battery.usable_kwh;
     this.store.setUserData(prev);
   }
 

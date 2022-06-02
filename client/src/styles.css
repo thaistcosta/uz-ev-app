@@ -10,8 +10,13 @@
 }
 
 .mat-slider-track-fill {
-	background-color: rgb(144, 233, 10) !important;
+	background-color: #90e90a !important;
 }
+
+.mat-radio-button {
+  color: rgb(144, 233, 10)
+}
+
 
 html, body {
   width: 100vw;

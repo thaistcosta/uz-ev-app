@@ -5,6 +5,7 @@ export interface Trip {
     totalDistance: number
     totalDuration: string
     chargeTime: string
+    drivingDuration: string
     rangeStartPercentage: number
     rangeEndPercentage: number
     legs: [{

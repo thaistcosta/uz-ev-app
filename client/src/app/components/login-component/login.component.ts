@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiClientService } from 'src/app/service/api-client.service';
 
 @Component({
   selector: 'app-login-component',
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private api: ApiClientService) { }
 
   ngOnInit(): void {
     this.loginFormBuilder();
@@ -25,5 +26,11 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     // going to the database and bring the EVID 
+    console.log(this.loginForm.value)
+    this.api.login(this.loginForm.value.email, this.loginForm.value.password)
+  }
+
+  signInGoogle() {
+    this.api.googleLogin().subscribe(data => console.log(data));
   }
 }

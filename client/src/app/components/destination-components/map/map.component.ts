@@ -22,6 +22,8 @@ export class MapComponent implements OnInit {
   indexTracker: number[] = [];
   userData!: User;
   newCurrentPosition!: Mapboxgl.LngLatLike;
+  hide: boolean = false
+  
 
   constructor(private api: ApiClientService, private store: StoreService) { }
 
@@ -225,10 +227,15 @@ export class MapComponent implements OnInit {
     });
   }
 
-  panic() {
+  panic(): void {
     let prev = this.store.getDiscover()
-
-    prev.batteryLevel = 7;
+    let user = this.store.getUserData()
+    
+    if (!user.panicLevel){
+      prev.batteryLevel = 7;
+    } else{
+      prev.batteryLevel = user.panicLevel;
+    }
 
     this.store.setDiscover(prev);
 
@@ -249,7 +256,7 @@ export class MapComponent implements OnInit {
             this.api.routeSubscription(data.data.newRoute).subscribe(data => {
               // after receiving the data decoding the polyline propertie 
               if (data.data.routeUpdatedById.route !== null) {
-                this.store.setRouteData(data.data.routeUpdatedById.route)
+                this.store.setRoute(data.data.routeUpdatedById.route);
                 this.route = data.data.routeUpdatedById.route;
                 this.polylineDecoder(this.route);
                 this.routeHandler(this.route);
@@ -278,7 +285,8 @@ export class MapComponent implements OnInit {
 
     googleUrl += `&dir_action=navigate&travelmode=driving`;
   
-    window.open(googleUrl);
+    window.location.href = googleUrl;
+    // window.open(googleUrl);
     
   }
  

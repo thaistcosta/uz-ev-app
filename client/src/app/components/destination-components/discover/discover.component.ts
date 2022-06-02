@@ -1,8 +1,8 @@
-import { Component, OnInit, Input, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ApiClientService } from 'src/app/service/api-client.service';
 import { StoreService } from 'src/app/service/store.service';
-import { FormBuilder, FormControlName, FormGroup, Validators, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import * as Mapboxgl from 'mapbox-gl';
 import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
@@ -69,9 +69,10 @@ export class DiscoverComponent implements OnInit {
 
     this.discoverForm.value.amenities = this.selectedAmenities;
     let car = this.store.getUserData();
+    
     console.log(car)
     console.log(this.discoverForm.value.batteryLevel)
-    this.discoverForm.value.batteryLevel = ((car.carUsableKw * this.discoverForm.value.batteryLevel) / 100);
+    this.discoverForm.value.batteryLevel = ((car.carUsableKwh * this.discoverForm.value.batteryLevel) / 100);
 
    console.log(this.discoverForm.value.batteryLevel);
 
@@ -91,7 +92,7 @@ export class DiscoverComponent implements OnInit {
               if (data.data.routeUpdatedById.route !== null){
                 this.store.setRoute(data.data.routeUpdatedById.route);
                 this._router.navigate(['map'])
-                }
+              }
               }
             )
           }

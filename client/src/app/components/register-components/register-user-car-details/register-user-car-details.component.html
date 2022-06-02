@@ -1,6 +1,8 @@
 <div class="container">
-    <div class="car-detail">
-        <a (click)="select(car)">
+    <div class="car-detail"> 
+        <a>
+            <mat-radio-button [color]="color" value='car' (click)="select(car)"></mat-radio-button>
+            <br>
             <h3>Model: {{car.naming.model}}</h3>
             <p>Version: {{car.naming.chargetrip_version}}</p>
             <img src={{car.media.image.thumbnail_url}}/>
@@ -10,6 +12,7 @@
                 Usable kwh: {{car.battery.usable_kwh}}
                 <br>
                 Full kwh: {{car.battery.full_kwh}}</p>
+            <!-- <mat-slide-toggle class="example-margin" (click)="select(car)" [color]="color" [checked]="checked" [disabled]="disabled"></mat-slide-toggle> -->
         </a>
     </div>
 </div>    

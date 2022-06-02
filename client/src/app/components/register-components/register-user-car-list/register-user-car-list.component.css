@@ -1,11 +1,16 @@
-  form select {
-    position: relative;
-    font-family: Arial;
+  select {
+    border-radius: 20px;
     height: 30px;
     width: 200px;
-    max-height: 200px;
-    overflow-y: scroll;
-    border-radius: 20px;
+    padding: 5px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 10vh;
   }
 
   .car-list {
@@ -14,14 +19,14 @@
     display: flex;
   }
 
-  form {
-    max-height: 150px;
+  h2 {
+    color: #002984;
   }
+
   .custom-select {
-    /* position: absolute; */
-    margin: 20px 20px;
-    top: 20px;
-    max-height: 150px;
+    /* position: absolute;*/
+
+    overflow-y: scroll;
   }
   
   img {

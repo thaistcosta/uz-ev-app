@@ -15,6 +15,8 @@ import { RouteDetailsComponent } from './components/destination-components/route
 import { DestinationComponent } from './components/destination-components/destination/destination.component';
 import { MapComponent } from './components/destination-components/map/map.component';
 import { LoginComponent } from './components/login-component/login.component';
+import { LogoComponent } from './components/logo-component/logo.component';
+import { ProfilesComponent } from './components/profiles/profiles.component';
 
 
 // APOLLO 
@@ -33,17 +35,17 @@ import { DiscoverComponent } from './components/destination-components/discover/
 
 
 // MATERIAL UI
-import { MatSliderModule } from '@angular/material/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatChipsModule } from '@angular/material/chips'
-import { MatStepperModule } from '@angular/material/stepper'; // this
-import { OverlayModule } from '@angular/cdk/overlay' // this
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatSidenavModule } from '@angular/material/sidenav' // this
-import { MatIconModule } from '@angular/material/icon'; // this
-import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper'; //this
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatCardModule} from '@angular/material/card';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSliderModule } from '@angular/material/slider';
+
 
 @NgModule({
   declarations: [
@@ -57,6 +59,9 @@ import {MatCardModule} from '@angular/material/card';
     LoginComponent,
     RouteDetailsComponent,
     DiscoverComponent,
+    LogoComponent,
+    ProfilesComponent,
+    ProfilesComponent
   ],
   imports: [
     BrowserModule,
@@ -66,15 +71,15 @@ import {MatCardModule} from '@angular/material/card';
     FormsModule,
     ApolloModule,
     BrowserAnimationsModule,
-    MatSliderModule,
     MatChipsModule,
-    MatStepperModule, // this
-    MatSidenavModule, // this
-    OverlayModule, // this 
-    MatIconModule, // this
     MatExpansionModule,
     MatCardModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule,
+    MatDialogModule,
+    MatSlideToggleModule,
+    MatRadioModule,
+    MatSliderModule,
   ],
   providers: [{
     provide: APOLLO_OPTIONS,
@@ -114,9 +119,6 @@ import {MatCardModule} from '@angular/material/card';
       }
     },
     deps: [HttpLink]
-  }, {
-    provide: STEPPER_GLOBAL_OPTIONS,
-    useValue: {displayDefaultIndicatorType: false} 
   }],
   bootstrap: [AppComponent]
 })

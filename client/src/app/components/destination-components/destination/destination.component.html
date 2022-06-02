@@ -1,5 +1,34 @@
 <div>
-    <button (click)="navigate([route])" class="navigate">Navigate</button>
-    <!-- <button (click)="navigate(route)" class="navigate">Panic</button> -->
-</div>
+    <h2 mat-dialog-title>Route Details</h2>
+    <mat-dialog-content class="mat-typography">
+      <h2>{{trip.totalDuration}} ({{trip.totalDistance}} km)</h2>
+      <span class="overview">🚗 {{trip.drivingDuration}}  ⚡{{trip.chargeTime}} - {{trip.stops}} charges</span>
 
+      <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel *ngFor="let charge of charges" class="stops"> 
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span class="tags">charge time </span>
+              <span>{{charge.chargeTime}}</span>
+            </mat-panel-title>
+            <mat-panel-description>
+              <span class="tags">start end</span>
+              {{charge.rangeStart}}% {{charge.rangeEnd}}% 
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div>      
+            <span class="charger">{{charge.chargerName}}</span>
+            <hr>
+            <p>Connector Type:</p>
+            <span>{{charge.connector.standard}}</span> 
+            <hr>
+            <p>Charger speed:</p> 
+            <span>{{charge.connector.power}} kWn</span>
+            <hr>
+            <p>Ride:</p> 
+            <span>{{charge.drivingTime}}  -   {{charge.km}} km</span>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-dialog-content>
+  </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
+import {ThemePalette} from '@angular/material/core';
 
 @Component({
   selector: 'app-register-user-car-details',
@@ -9,6 +9,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class RegisterUserCarDetailsComponent implements OnInit {
 
   userCar!: any;
+  color: ThemePalette = 'primary';
+  checked = false;
+  disabled = false;
   @Input() car!: any;
   @Output() selectedCar: EventEmitter<any> = new EventEmitter;
 

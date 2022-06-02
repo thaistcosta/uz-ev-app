@@ -6,10 +6,18 @@
     position: absolute;
 }
 
-img.low {
-    top: 70vh;
+img.profile {
+    top: 50vh;
     bottom: 50px;
-    right: 20px;
+    right: 30px;
+    position: absolute;
+    max-width: 50px;
+}
+
+img.low {
+    top: 80vh;
+    bottom: 50px;
+    right: 22px;
     position: absolute;
     max-width: 60px;
 }
@@ -22,7 +30,7 @@ img.search {
 }
 
 img.google {
-    top: 60vh;
+    top: 70vh;
     bottom: 50px;
     right: 30px;
     position: absolute;

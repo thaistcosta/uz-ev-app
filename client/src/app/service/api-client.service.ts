@@ -19,8 +19,10 @@ export class ApiClientService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    }),
+    mode: 'no-cors'
   }
 
   constructor(private http: HttpClient, private apollo: Apollo, private httpBackend: HttpBackend) { }
@@ -68,6 +70,14 @@ export class ApiClientService {
   sendUser(user: User): Observable<any> {
     console.log('here', user)
     return this.http.post(`${this.backendUrl}/user/signup`, user, this.httpOptions);
+  } 
+
+  googleLogin(): Observable<any> {
+    return this.http.get(`${this.backendUrl}/auth/google`);
+  }
+
+  login(user: string, password: string): any {
+    return this.http.post(`${this.backendUrl}/user/signin`, user, this.httpOptions);
   } 
 
 

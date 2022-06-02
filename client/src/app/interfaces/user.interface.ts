@@ -4,6 +4,8 @@ export interface User {
     email: string;
     password: string;
     carId: string;
-    carUsableKw: number;
+    carUsableKwh: number;
+    carUrl: string;
+    panicLevel?: number;
     _id?: string;
 }
